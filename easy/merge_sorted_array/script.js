@@ -53,3 +53,21 @@ let sorted = function( nums1, m, nums2, n){
        }
    
 };
+ 
+// another way?
+var merge = function(nums1, m, nums2, n) {
+    while(nums2.length > 0){
+      for(let i = 0; i<m+n-1; i++){
+          if(nums1[i] <= nums2[0] && nums1[i+1] >= nums2[0]){
+            //  console.log(nums1[i], nums2[i])
+            nums1.splice(i,n,i+1);
+             }else if(nums1[i] <= nums2[0] ){
+                 
+             }
+      
+             }
+     nums2.shift();
+  
+    }
+    
+};f
