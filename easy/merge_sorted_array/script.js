@@ -12,3 +12,13 @@ var merge = function(nums1, m, nums2, n) {
     nums1.splice(m, n, ...nums2);
     nums1.sort((a, b) => a-b); //this nonsence is called compare function
 };
+
+//somebody's pretty efficient solution less readable
+
+var merge = function (nums1, m, nums2, n) {
+    var insertPos = m + n - 1;
+    m--; n--;
+    while (n >= 0) {
+        nums1[insertPos--] = (nums1[m] > nums2[n]) ? nums1[m--] : nums2[n--];
+    }
+};
