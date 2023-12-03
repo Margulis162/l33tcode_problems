@@ -11,3 +11,18 @@ var majorityElement = function(nums) {
         }
     }
 };
+
+
+//second solution memory consuming but accepted this time 
+
+var majorityElement = function(nums) {
+    const values = new Set(nums);
+    for(const elem of values){
+        let arr = nums.filter((elm)=>{
+            return elm == elem;
+        })
+        if(nums.length/2 < arr.length){
+            return elem;
+        }
+    }
+ };
