@@ -21,3 +21,19 @@ var maxProfit = function(prices) {
     }
     
 };
+
+//ajusted code which doesnt pass submissions but runs perfectly on test cvar maxProfit = function(prices) {
+  let arr = [];
+  for(let i =0; i<prices.length; i++){
+    for(let j = prices.length+1; j>i; j--){
+      if(prices[j] - prices[i] > 0){
+        arr.push(prices[j] - prices[i]);
+      }
+    }
+    
+  } 
+  if(arr.length !==0){
+     arr.sort((a,b) => b-a)
+     return arr[0]
+  }else{return 0}
+};
