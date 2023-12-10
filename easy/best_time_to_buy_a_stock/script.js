@@ -50,3 +50,17 @@ if(maxIndex > minIndex){
     
 }
 };
+
+// I think this works but it excceeds the limit 
+
+var maxProfit = function(prices) {
+  let maxProfit = 0;
+ for(let i  = 0; i < prices.length; i++){
+     for(let j = prices.length; j > i; j --){
+         if(prices[j]-prices[i]>maxProfit){
+             maxProfit = prices[j] - prices[i]; 
+         }
+     }
+ }
+ return maxProfit;
+};
