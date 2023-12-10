@@ -37,3 +37,16 @@ var maxProfit = function(prices) {
      return arr[0]
   }else{return 0}
 };
+
+// another half succesful attempt 
+var maxProfit = function(prices) {
+  const minVal = Math.min(...prices);
+const maxVal = Math.max(...prices);
+const minIndex = prices.indexOf(minVal);
+const maxIndex = prices.indexOf(maxVal);
+if(maxIndex > minIndex){
+    return maxVal - minVal;
+}else{
+    
+}
+};
