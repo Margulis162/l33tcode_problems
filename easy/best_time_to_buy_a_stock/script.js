@@ -81,3 +81,17 @@ const maxProfit = function(prices) {
 };
 
 console.log(maxProfit(input));
+
+// final solution with better time complexity
+
+var maxProfit = function(prices) {
+  let bestBuyDay = prices[0];
+  let maxProfit = 0;
+  for(let i =1; i < prices.length; i++){
+      bestBuyDay = Math.min(bestBuyDay, prices[i-1])
+      let profit = prices[i] - bestBuyDay;
+      maxProfit = Math.max(maxProfit, profit);
+      
+  }
+  return maxProfit;
+};
