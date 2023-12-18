@@ -23,3 +23,35 @@ var canJump = function(nums) {
   
     
 };
+
+// second shot, not a very successful eather gotta figure that out on weekend 
+
+var canJump = function(nums) {
+    let zeroIndeces =[];
+//that gives me the indeces of all 0s
+for(let i = 0; i < nums.length; i++){
+    if(nums[i] == 0){
+        zeroIndeces.push(i);
+    }
+}
+if(zeroIndeces.length > 0){
+    let sliceStart = 0;
+for(let i = 0; i< zeroIndeces.length; i++){
+    const shallowNums = nums.slice();
+    console.log(shallowNums);
+    const arr = shallowNums.splice(sliceStart, zeroIndeces[i]-(sliceStart));
+    sliceStart = zeroIndeces[i];
+    console.log(arr);
+} }
+};
+
+// the solution with greedy algorithm
+var canJump = function(nums) {
+    let finish = nums.length -1;
+    for(let i = nums.length -1; i >= 0; i--){
+        if(finish <= i+nums[i]){
+            finish = i;
+        }
+    }
+    return finish === 0;
+};
