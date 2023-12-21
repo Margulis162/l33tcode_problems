@@ -51,7 +51,7 @@ var twoSum = function(nums, target) {
 
 // chatGTP solution 
 
-*/
+
 function twoSum(nums, target) {
     const numMap = new Map();
     for (let i = 0; i < nums.length; i++) {
