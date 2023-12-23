@@ -90,7 +90,7 @@ var maxProfit = function(prices) {
   for(let i =1; i < prices.length; i++){
       bestBuyDay = Math.min(bestBuyDay, prices[i-1])
       let profit = prices[i] - bestBuyDay;
-      maxProfit = Math.max(maxProfit, profit);
+      maxProfit = Math.max(maxProfit, profit); // this is like if(maxProfit > profit);
       
   }
   return maxProfit;
