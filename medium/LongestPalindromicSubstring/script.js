@@ -19,3 +19,7 @@ var longestPalindrome = function(s) {
     // that worked now I need to figure out how to use symetry to get the indeces of the longest paliandrome
     console.log(arrFromSet , symetry)
 };
+
+// I think the it might work better if i start in the center of the String. Compare nearby characters to the one I'm on to see if they 
+// are equal to the one I'm on or to each other. If not than there is no symetry axis there and I need to move eather left or rigth. 
+// Otherwise I compare the next two characters to see if they are symetrical as well and record the longest slice at every step.
