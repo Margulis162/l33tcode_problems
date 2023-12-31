@@ -8,4 +8,4 @@ var findMedianSortedArrays = function(nums1, nums2) {
         return (nums3[(nums3.length/2)-1] + nums3[nums3.length/2])/2
     }
     console.log(nums3)
-};
+}
