@@ -20,6 +20,41 @@ var longestPalindrome = function(s) {
     console.log(arrFromSet , symetry)
 };
 
-// I think the it might work better if i start in the center of the String. Compare nearby characters to the one I'm on to see if they 
+// I think that it might work better if i start in the center of the String. Compare nearby characters to the one I'm on to see if they 
 // are equal to the one I'm on or to each other. If not than there is no symetry axis there and I need to move eather left or rigth. 
 // Otherwise I compare the next two characters to see if they are symetrical as well and record the longest slice at every step.
+
+
+
+
+// I thought this code might be just the solution but it fails on the very long case. The idea was since we are looking for the longest str
+// to start with the longest substrings and kind  of go down. I guess on certain datasets it might Work just fine 
+var longestPalindrome = function(s) {
+    
+    let copy = s
+    let subLenght = copy.length
+    let subtractor
+        
+ 
+
+        
+    while(subLenght>0){
+         if(copy == copy.split('').reverse().join('')){
+        return copy}else{
+            subtractor = 0
+            subLenght --
+           
+            while(subLenght + subtractor <= s.length){
+                copy = s.substr(subtractor, subLenght)
+                
+                if(copy == copy.split('').reverse().join('')){
+        return copy}
+                subtractor++
+            }
+            
+        }
+        
+    }
+   
+    
+};
