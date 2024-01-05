@@ -58,3 +58,47 @@ var longestPalindrome = function(s) {
    
     
 };
+
+
+var longestPalindrome = function(s) {
+    const arr = Array.from(s)
+   
+    let longest =[]
+    
+    if( s.length <= 1){
+        return s
+    }
+    for(let i = 0; i<arr.length; i++){
+        
+        if(arr[i] ===arr[i+1]){
+             if([...arr].splice(i, i+1).length > longest.length){
+                    longest = [...arr].splice(i, i+1)
+                   
+                    
+                }
+            let count = 1
+            while(arr[i-count] === arr[i+count+1] && arr[i-count] ){
+               console.log(arr[i-count], arr[i+1+count])
+                if([...arr].splice(i-count, i+1+count).length > longest.length){
+                    longest = [...arr].splice(i-count, i+2+count)
+                   
+                    
+                }
+                count++
+            }
+            
+        }else if(arr[i-1] === arr[i+1]){
+             
+            let count=1
+              while(arr[i-count] === arr[i+count] && arr[i-count] ){
+             
+         
+                if([...arr].splice(i-count, count*2+1).length > longest.length){
+                    longest = [...arr].splice(i-count, count*2+1)
+                   
+                }
+                     count++
+        }}
+    }
+   return longest.join('')
+};
