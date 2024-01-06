@@ -102,3 +102,47 @@ var longestPalindrome = function(s) {
     }
    return longest.join('')
 };
+
+// latest attempt
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var longestPalindrome = function(s) {
+    let longest = ''
+    
+    if(s.length<=0){
+        return s
+    }
+    
+    
+    for(let i=0; i<s.length; i++){
+        console.log('i is',i)
+         let oddSymetry = expand(i,i)
+         // let evenSymetry =  expand(i-1, i)
+    
+          if(oddSymetry.length > longest.length){
+        longest = oddSymetry
+    }
+    
+//     if(evenSymetry.length > longest.length){
+//         longest = evenSymetry
+//     }
+        
+    }
+  return longest
+    function expand(left, right){
+        let j = 0
+               
+        while(s[left-j] == s[right+j] && s[left-j]){
+            j+=1
+            
+        }
+        console.log(left - j,right +j)
+        return longest = s.slice(left - j, right +j)
+    }
+    
+
+    
+};
