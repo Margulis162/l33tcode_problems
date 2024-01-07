@@ -146,3 +146,28 @@ var longestPalindrome = function(s) {
 
     
 };
+
+var longestPalindrome = function(s) {
+    let longest = [0,1]
+    let currentMax =[]
+
+    for(let i =0; i<s.length; i++){
+        console.log(`i is ${i}`)
+         let oddSymetry =expand(i,i)
+         
+        //  let evenSymetry =expand(i-1, i)
+        
+        console.log('current Max' + currentMax )      
+    }
+   
+    function expand(left,right){
+        while(left>=0 && right<s.length){
+            console.log(`while loop left is${left} right is ${right}`)
+            if(s[right] !== s[left]) return currentMax = [left, right]
+
+            left--
+            right++
+        }
+    }
+    return s.slice(longest[0], longest[1])
+};
